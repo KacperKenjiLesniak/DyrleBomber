@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviourPun
     
     public Rigidbody2D rb;
 
+    public GameObject bombPrefab;
+    
     public static GameObject LocalPlayerInstance;
 
     void Awake()
@@ -25,7 +27,16 @@ public class PlayerController : MonoBehaviourPun
         {
             movement.x = Input.GetAxis("Horizontal");
             movement.y = Input.GetAxis("Vertical");
+            if (Input.GetButtonDown("Jump"))
+            {
+                SpawnBomb();
+            }
         }
+    }
+
+    private void SpawnBomb()
+    {
+        PhotonNetwork.Instantiate(bombPrefab.name, transform.position, Quaternion.identity);
     }
 
     void FixedUpdate()

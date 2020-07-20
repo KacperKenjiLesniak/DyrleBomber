@@ -70,7 +70,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.38}
+  m_Offset: {x: 0, y: -0.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -81,7 +81,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.8, y: 0.5}
   m_EdgeRadius: 0
 --- !u!114 &4180866666636622492
 MonoBehaviour:
@@ -97,6 +97,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseSpeed: 4
   rb: {fileID: 4180866666636622494}
+  bombPrefab: {fileID: 175411683279080651, guid: a6e454f5075feee49930dff9082bc683,
+    type: 3}
 --- !u!114 &7293367495282076050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,17 +147,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chara_09
       objectReference: {fileID: 0}
+    - target: {fileID: 1816363166966330, guid: fabe0c86f03e51842b4b9eb28255180d, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4279284982880860, guid: fabe0c86f03e51842b4b9eb28255180d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4279284982880860, guid: fabe0c86f03e51842b4b9eb28255180d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 4279284982880860, guid: fabe0c86f03e51842b4b9eb28255180d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 4279284982880860, guid: fabe0c86f03e51842b4b9eb28255180d, type: 3}
       propertyPath: m_LocalRotation.x
@@ -187,6 +193,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4279284982880860, guid: fabe0c86f03e51842b4b9eb28255180d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279284982880860, guid: fabe0c86f03e51842b4b9eb28255180d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279284982880860, guid: fabe0c86f03e51842b4b9eb28255180d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279284982880860, guid: fabe0c86f03e51842b4b9eb28255180d, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 212508486154887630, guid: fabe0c86f03e51842b4b9eb28255180d,
+        type: 3}
+      propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
