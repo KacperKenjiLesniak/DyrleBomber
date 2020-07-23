@@ -36,7 +36,8 @@ public class PlayerController : MonoBehaviourPun
 
     private void SpawnBomb()
     {
-        PhotonNetwork.Instantiate(bombPrefab.name, transform.position, Quaternion.identity);
+        var bomb = PhotonNetwork.Instantiate(bombPrefab.name, RoundPosition(transform.position), Quaternion.identity);
+        bomb.GetComponent<BombController>().spawningPlayerTransform = transform;
     }
 
     void FixedUpdate()
@@ -45,5 +46,10 @@ public class PlayerController : MonoBehaviourPun
         {
             rb.MovePosition(rb.position + movement * baseSpeed * Time.fixedDeltaTime);
         }
+    }
+
+    Vector3 RoundPosition(Vector3 position)
+    {
+        return new Vector3(Mathf.Ceil(position.x) - 0.5f, Mathf.Ceil(position.y) - 0.5f, position.z);
     }
 }
